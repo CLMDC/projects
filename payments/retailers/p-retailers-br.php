@@ -376,10 +376,6 @@ label {
       box-shadow: 0px 2px 5px -2px rgba(0, 0, 0, 0.25) !important;
     }
 
-    /*.rdo input[type="radio"]#control_05:checked + label {
-      background: red !important;
-      border-color: red !important;
-    }*/
 
     .rdo p {
       font-weight: 600 !important;
@@ -604,17 +600,6 @@ label {
               </div>
 
 
-             
-
-              <!-- <div class="col-md-6">
-                  <div class="form-group">
-                      <input id="email" type="email" name="email" class="form-control" placeholder="Email address*" required="required" data-error="Valid email is required." value="<?php if (isset($email)) echo $emailError ?>">
-                      <span class="error"><?php if (isset($emailError)) echo $emailError ?></span> 
-                      <div class="help-block with-errors"></div>
-                  </div>
-              </div> -->
-
-
               <div class="col-md-6">
                   <div class="form-group">
                       <input onkeypress="return /[a-zA-Z0-9 @.]/i.test(event.key)" id="email" type="email" name="email" class="form-control" placeholder="Email address*" required="required" data-error="Valid email is required.">                      
@@ -660,14 +645,14 @@ label {
 
               <div class="col-md-6"> 
                   <div class="form-group">
-                      <input onkeypress="return /[a-zA-Z0-9 ]/i.test(event.key)" id="accountAgencyNumber" type="text" name="accountAgencyNumber" class="form-control" placeholder="Account agency number*" required="required" data-error="Account agency number is required.">
+                      <input onkeypress="return /[a-zA-Z0-9 ]/i.test(event.key)" id="accountAgencyNumber" type="text" name="accountAgencyNumber" class="form-control" placeholder="Account agency number*" required="required" data-error="Account agency number is required." maxlength="6">
                       <div class="help-block with-errors"></div>
                   </div>
               </div>
 
               <div class="col-md-6"> 
                   <div class="form-group">
-                      <input onkeypress="return /[a-zA-Z0-9 ]/i.test(event.key)" id="accountNumber" type="text" name="accountNumber" class="form-control" placeholder="Account number*" required="required" data-error="Account number is required.">
+                      <input onkeypress="return /[a-zA-Z0-9 ]/i.test(event.key)" id="accountNumber" type="text" name="accountNumber" class="form-control" placeholder="Account number*" required="required" data-error="Account number is required." maxlength="13">
                       <div class="help-block with-errors"></div>
                   </div>
               </div>

@@ -14,7 +14,6 @@ $email = $_POST['email'];
 $currencyCode = $_POST['currencyCode'];
 $country = $_POST['country'];
 $bankName = $_POST['bankName'];
-$accountAgencyNumber = $_POST['accountAgencyNumber'];
 $accountNumber = $_POST['accountNumber'];
 $amount = $_POST['amount'];
 $payoutAccountTypeCode = $_POST['payoutAccountTypeCode'];
@@ -48,7 +47,6 @@ curl_setopt_array($curl, array(
              \n    \"currencyCode\": \"$currencyCode\",
              \n    \"country\": \"$country\",
              \n    \"bankName\": \"$bankName\",
-             \n    \"accountAgencyNumber\": \"$accountAgencyNumber\",
              \n    \"accountNumber\": \"$accountNumber\",
              \n    \"amount\": \"$amount\",
              \n    \"payoutAccountTypeCode\": \"$payoutAccountTypeCode\",
@@ -571,14 +569,14 @@ label {
               <!-- <div class="col-md-6" style="padding-right: 5px;">  -->
               <div class="col-md-6"> 
                   <div class="form-group">
-                      <input onkeypress="return /[a-z ]/i.test(event.key)" id="beneficiaryFirstName" type="text" name="beneficiaryFirstName" class="form-control" placeholder="First name*" required="required" data-error="Firstname is required.">
+                      <input onkeypress="return /[a-z ]/i.test(event.key)" id="beneficiaryFirstName" type="text" name="beneficiaryFirstName" class="form-control" placeholder="First name*" required="required" data-error="Firstname is required." maxlength="32">
                       <div class="help-block with-errors"></div>
                   </div>
               </div>
 
               <div class="col-md-6"> 
                   <div class="form-group">
-                      <input onkeypress="return /[a-z ]/i.test(event.key)" id="beneficiaryLastName" type="text" name="beneficiaryLastName" class="form-control" placeholder="Last name*" required="required" data-error="Lastname is required.">
+                      <input onkeypress="return /[a-z ]/i.test(event.key)" id="beneficiaryLastName" type="text" name="beneficiaryLastName" class="form-control" placeholder="Last name*" required="required" data-error="Lastname is required." maxlength="32">
                       <div class="help-block with-errors"></div>
                   </div>
               </div>
@@ -586,7 +584,7 @@ label {
 
 
 
-              <div class="col-md-4"> 
+              <div class="col-md-6"> 
               <div class="form-group">
                   <select class="form-control" id="PayoutBeneficiaryTypeCode" name="PayoutBeneficiaryTypeCode" required>
                     <option value="">Payout beneficiary type code*</option>
@@ -596,7 +594,7 @@ label {
                 </div>
               </div>
 
-              <div class="col-md-4"> 
+              <div class="col-md-6"> 
               <div class="form-group">
                   <select class="form-control" id="documentType" name="documentType" required>
                     <option value="">Document type*</option>
@@ -605,10 +603,10 @@ label {
                 </div>
               </div>
 
-              <div class="col-md-4"> 
+              <div class="col-md-6"> 
               <!-- <div class="col-md-6"> -->
                   <div class="form-group">
-                      <input onkeypress="return /[a-zA-Z0-9 ]/i.test(event.key)" id="documentNumber" type="text" name="documentNumber" class="form-control" placeholder="Document number*" required="required" data-error="Document number is required.">
+                      <input onkeypress="return /[a-zA-Z0-9 ]/i.test(event.key)" id="documentNumber" type="text" name="documentNumber" class="form-control" placeholder="Document number*" required="required" data-error="Document number is required." maxlength="9">
                       <div class="help-block with-errors"></div>
                   </div>
               </div>
@@ -656,16 +654,10 @@ label {
                 </div>
               </div>
 
-              <div class="col-md-6"> 
-                  <div class="form-group">
-                      <input onkeypress="return /[a-zA-Z0-9 ]/i.test(event.key)" id="accountAgencyNumber" type="text" name="accountAgencyNumber" class="form-control" placeholder="Account agency number*" required="required" data-error="Account agency number is required.">
-                      <div class="help-block with-errors"></div>
-                  </div>
-              </div>
 
               <div class="col-md-6"> 
                   <div class="form-group">
-                      <input onkeypress="return /[a-zA-Z0-9 ]/i.test(event.key)" id="accountNumber" type="text" name="accountNumber" class="form-control" placeholder="Account number*" required="required" data-error="Account number is required.">
+                      <input onkeypress="return /[a-zA-Z0-9 ]/i.test(event.key)" id="accountNumber" type="text" name="accountNumber" class="form-control" placeholder="Account number*" required="required" data-error="Account number is required." maxlength="13">
                       <div class="help-block with-errors"></div>
                   </div>
               </div>

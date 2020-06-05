@@ -17,7 +17,7 @@ $accountAgencyNumber = $_POST['accountAgencyNumber'];
 $accountNumber = $_POST['accountNumber'];
 $amount = $_POST['amount'];
 $payoutAccountTypeCode = $_POST['payoutAccountTypeCode'];
-$NotificationUrl = 'https=>//payment-form.payretailers.com';
+$NotificationUrl = 'https//payment-form.payretailers.com';
 
 
 
@@ -594,7 +594,7 @@ label {
               <div class="col-md-6"> 
               <!-- <div class="col-md-6"> -->
                   <div class="form-group">
-                      <input onkeypress="return /[a-zA-Z0-9 ]/i.test(event.key)" id="documentNumber" type="text" name="documentNumber" class="form-control" placeholder="Document number*" required="required" data-error="Document number is required.">
+                      <input onkeypress="return /[a-zA-Z0-9]/i.test(event.key)" id="documentNumber" type="text" name="documentNumber" class="form-control" placeholder="Document number*" required="required" data-error="Document number is required.">
                       <div class="help-block with-errors"></div>
                   </div>
               </div>
@@ -645,14 +645,14 @@ label {
 
               <div class="col-md-6"> 
                   <div class="form-group">
-                      <input onkeypress="return /[a-zA-Z0-9 ]/i.test(event.key)" id="accountAgencyNumber" type="text" name="accountAgencyNumber" class="form-control" placeholder="Account agency number*" required="required" data-error="Account agency number is required." maxlength="6">
+                      <input onkeypress="return /[a-zA-Z0-9]/i.test(event.key)" id="accountAgencyNumber" type="text" name="accountAgencyNumber" class="form-control" placeholder="Account agency number*" required="required" data-error="Account agency number is required." maxlength="6">
                       <div class="help-block with-errors"></div>
                   </div>
               </div>
 
               <div class="col-md-6"> 
                   <div class="form-group">
-                      <input onkeypress="return /[a-zA-Z0-9 ]/i.test(event.key)" id="accountNumber" type="text" name="accountNumber" class="form-control" placeholder="Account number*" required="required" data-error="Account number is required." maxlength="13">
+                      <input onkeypress="return /[a-zA-Z0-9]/i.test(event.key)" id="accountNumber" type="text" name="accountNumber" class="form-control" placeholder="Account number*" required="required" data-error="Account number is required." maxlength="13">
                       <div class="help-block with-errors"></div>
                   </div>
               </div>

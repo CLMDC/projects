@@ -606,7 +606,7 @@ label {
               <div class="col-md-6"> 
               <!-- <div class="col-md-6"> -->
                   <div class="form-group">
-                      <input onkeypress="return /[a-zA-Z0-9 ]/i.test(event.key)" id="documentNumber" type="text" name="documentNumber" class="form-control" placeholder="Document number*" required="required" data-error="Document number is required." maxlength="9">
+                      <input onkeypress="return /[a-zA-Z0-9]/i.test(event.key)" id="documentNumber" type="text" name="documentNumber" class="form-control" placeholder="Document number*" required="required" data-error="Document number is required." maxlength="9">
                       <div class="help-block with-errors"></div>
                   </div>
               </div>
@@ -657,7 +657,7 @@ label {
 
               <div class="col-md-6"> 
                   <div class="form-group">
-                      <input onkeypress="return /[a-zA-Z0-9 ]/i.test(event.key)" id="accountNumber" type="text" name="accountNumber" class="form-control" placeholder="Account number*" required="required" data-error="Account number is required." maxlength="13">
+                      <input onkeypress="return /[a-zA-Z0-9]/i.test(event.key)" id="accountNumber" type="text" name="accountNumber" class="form-control" placeholder="Account number*" required="required" data-error="Account number is required." maxlength="13">
                       <div class="help-block with-errors"></div>
                   </div>
               </div>

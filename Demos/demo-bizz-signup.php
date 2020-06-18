@@ -1528,7 +1528,7 @@ input[type="checkbox"]:disabled+span.tyc { border-color: red; border-style: soli
 
                                 <!-- <input style="color: #fff; font-family: avenir-regular; font-weight: 500;  font-size: 17px;  border-radius: 8px !important" type="submit" name="submit" class="btn btn-success btn-send" onclick="passvalues();" formaction="https://clmmultisites.wpengine.comlive" value="LIVE">    -->
                                 <?php
-                                if (isset($_POST['submitL'])) {
+                                if (isset($_POST['submitLL'])) {
                                       // Starts send email
                                     $to = "accounts@clmforex.com"; // this is your UserName address
                                     //$to = "danycan31416@gmail.com"; // this is your UserName address
@@ -1561,7 +1561,7 @@ input[type="checkbox"]:disabled+span.tyc { border-color: red; border-style: soli
                                     //delete
                                     //header('Location: /live-account-application'); // to redirect to another page.  
 
-                                    header( "refresh:1; url=/live-account-application" );
+                                    header( "refresh:1; url=/bizzlivesignup" );
 
                                 // Ends send email */
                                  
@@ -1573,7 +1573,7 @@ input[type="checkbox"]:disabled+span.tyc { border-color: red; border-style: soli
                                 <!-- <input style="color: #fff; font-family: avenir-regular; font-weight: 500;  font-size: 17px;  border-radius: 8px !important" type="submit" name="submit" class="btn btn-success btn-send" onclick="passvalues();" formaction="/live-account-application" value="LIVE">    -->
                                
                                 <!-- To send email -->                                
-                                <input style="color: #fff; font-family: avenir-regular; font-weight: 500;  font-size: 17px;  border-radius: 8px !important" type="submit" name="submitL" class="btn btn-success btn-send" onclick="passvalues();" value="LIVE">
+                                <input style="color: #fff; font-family: avenir-regular; font-weight: 500;  font-size: 17px;  border-radius: 8px !important" type="submit" name="submitLL" class="btn btn-success btn-send" onclick="passvalues();" value="LIVE">
 
                                 <!-- <input type="submit" value="Click" onclick="passvalues();" formaction="https://clmmultisites.wpengine.comlive"/>  -->
 

@@ -1959,7 +1959,7 @@ select {
                             <!-- Hidden -->
                             <input id="Preferred_Language__c" type="hidden" name="Preferred_Language__c" class="form-control" placeholder="Please enter your phone number *" required="required" data-error="Phone is required." value="English">
 
-                            <input id="lead_source" type="hidden" name="lead_source" class="form-control" placeholder="Please enter your phone number *" required="required" data-error="Phone is required." value="Zeno Strategics Ltd.">
+                            <input id="lead_source" type="hidden" name="lead_source" class="form-control" placeholder="Please enter your phone number *" required="required" data-error="Phone is required." value="Live Account (Zeno-Strategics-form)">
 
                             <input id="Date_Live_Account__c" type="hidden" name="Date_Live_Account__c" class="form-control" placeholder="Please enter your phone number *" required="required" data-error="Phone is required." value="<?php echo (isset($varTime))?$varTime:'';?>">
 

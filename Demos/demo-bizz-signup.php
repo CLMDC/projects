@@ -1518,15 +1518,8 @@ input[type="checkbox"]:disabled+span.tyc { border-color: red; border-style: soli
                            
                             <div class="col-md-12">
                              
-
                                 <input style="color: #fff; font-family: avenir-regular; font-weight: 500; font-size: 17px; border-radius: 8px !important" type="submit" name="submit" class="btn btn-primary btn-send" value="DEMO">
 
-
-                               
-                               
-                                <!-- <input style="color: #fff; font-family: avenir-regular; font-weight: 500;  font-size: 17px;  border-radius: 8px !important" type="submit" name="submit" class="btn btn-success btn-send" onclick="location.href='https://clmmultisites.wpengine.comlive';" value="LIVE">  -->
-
-                                <!-- <input style="color: #fff; font-family: avenir-regular; font-weight: 500;  font-size: 17px;  border-radius: 8px !important" type="submit" name="submit" class="btn btn-success btn-send" onclick="passvalues();" formaction="https://clmmultisites.wpengine.comlive" value="LIVE">    -->
                                 <?php
                                 if (isset($_POST['submitLL'])) {
                                       // Starts send email
@@ -1537,11 +1530,8 @@ input[type="checkbox"]:disabled+span.tyc { border-color: red; border-style: soli
                                     $lead_last_name = $_POST['lead-last-name'];
                                     $from = $_POST['lead-email']; // this is the sender's UserName address
                                     $country = $_POST['social'];
-
-
-
                                     $subject = "Form EN [Pass from demo to live account]";
-                                   
+                                  
                                     // Concat first & last name
                                     $message = $lead_first_name.' '.$lead_last_name . "  starts with the following data:"
 
@@ -1574,8 +1564,6 @@ input[type="checkbox"]:disabled+span.tyc { border-color: red; border-style: soli
                                
                                 <!-- To send email -->                                
                                 <input style="color: #fff; font-family: avenir-regular; font-weight: 500;  font-size: 17px;  border-radius: 8px !important" type="submit" name="submitLL" class="btn btn-success btn-send" onclick="passvalues();" value="LIVE">
-
-                                <!-- <input type="submit" value="Click" onclick="passvalues();" formaction="https://clmmultisites.wpengine.comlive"/>  -->
 
                             </div>
                             <!-- Retrieve data from home & platfoms in email inputs  -->

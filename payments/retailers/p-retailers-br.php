@@ -7,6 +7,7 @@ if(isset($_POST['submit'])) {
 //'account-language-id' => $_POST['account-language-id'], 
 $beneficiaryFirstName = $_POST['beneficiaryFirstName']; 
 $beneficiaryLastName = $_POST['beneficiaryLastName'];
+$Phone = $_POST['Phone'];
 $documentType = $_POST['documentType'];
 $documentNumber = $_POST['documentNumber'];
 $email = $_POST['email'];
@@ -40,6 +41,7 @@ curl_setopt_array($curl, array(
   CURLOPT_POSTFIELDS =>"
             {\n    \"beneficiaryFirstName\": \"$beneficiaryFirstName\",
              \n    \"beneficiaryLastName\": \"$beneficiaryLastName\",
+             \n    \"Phone\": \"$Phone\",
              \n    \"documentType\": \"$documentType\",
              \n    \"documentNumber\": \"$documentNumber\",   
              \n    \"email\": \"$email\",            
@@ -578,9 +580,16 @@ label {
               </div>
 
 
+              <div class="col-md-4"> 
+              <!-- <div class="col-md-6"> -->
+                  <div class="form-group">
+                      <input onkeypress="return /[0-9]/i.test(event.key)" id="Phone" type="TEXT" name="Phone" class="form-control" placeholder="Phone number*" required="required" data-error="Phone number is required." maxlength="13">
+                      <div class="help-block with-errors"></div>
+                  </div>
+              </div>
 
 
-              <div class="col-md-6"> 
+              <div class="col-md-4"> 
               <div class="form-group">
                   <select class="form-control" id="documentType" name="documentType" required>
                     <!-- <select class="form-control" id="sel1"> -->
@@ -591,7 +600,7 @@ label {
                 </div>
               </div>
 
-              <div class="col-md-6"> 
+              <div class="col-md-4"> 
               <!-- <div class="col-md-6"> -->
                   <div class="form-group">
                       <input onkeypress="return /[a-zA-Z0-9]/i.test(event.key)" id="documentNumber" type="text" name="documentNumber" class="form-control" placeholder="Document number*" required="required" data-error="Document number is required.">

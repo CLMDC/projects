@@ -55,7 +55,8 @@ curl_setopt_array($curl, array(
              \n    \"NotificationUrl\": \"$NotificationUrl\"
             }",
   CURLOPT_HTTPHEADER => array(
-    "Content-Type: application/json"
+    "Content-Type: application/json",
+    "Accept: application/json"
   ),
 ));
 
@@ -67,6 +68,40 @@ $statusCode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
 
 curl_close($curl);
 //echo $response;
+echo '<br /><br />';
+
+
+
+
+
+// echo '<br/><br/>';
+
+
+// $var_info = print_r($response,true);
+
+// echo '<br/><br/>';
+
+// echo $var_info['errors'];echo '<br/>';
+// echo $var_info['errorCode'];echo '<br/>';
+
+// echo $var_info;
+
+// echo '<br/>';
+// echo json_encode($response);echo '<br/>';
+// echo $response['errors'];echo '<br/>';
+// echo $response['errorCode'];echo '<br/>';
+// echo $response['errors']['errorCode'];echo '<br/>';
+
+
+
+// $data = json_decode($response, TRUE);
+// echo $data(1);
+
+/*
+echo $data['errors'];echo '<br/>';
+echo $data['errorCode'];echo '<br/>';
+echo $data['errors']['errorCode'];echo '<br/>';
+*/
 
 
 
@@ -170,8 +205,6 @@ if ($statusCode == 200) {
     } 
 
 
-
-    /*html, body { height:auto; } a.md-default-theme:not(.md-button), a:not(.md-button) { color:#000;}.input {max-width: 280px;}label{min-width:80px;}*/
 
     #header {
       min-height:100%;
@@ -617,7 +650,7 @@ label {
               </div>
 
                <!-- Hidden  currencyCode, country -->
-              <input id="currencyCode" type="hidden" name="currencyCode" class="form-control" placeholder="" required="required" value="BRL">
+              <input id="currencyCode" type="hidden" name="currencyCode" class="form-control" placeholder="" required="required" value="BRLL">
               <input id="country" type="hidden" name="country" class="form-control" placeholder="" required="required" value="BR">
 
 

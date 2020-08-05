@@ -1,0 +1,408 @@
+<html lang="en"><head>
+<meta charset="UTF-8">
+<link rel="apple-touch-icon" type="image/png" href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+<meta name="apple-mobile-web-app-title" content="CodePen">
+<link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+<link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
+<title>CodePen - Loading Button</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<style>
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Montserrat Bold'), local('Montserrat-Bold'), url(http://fonts.gstatic.com/s/montserrat/v14/JTURjIg1_i6t8kCHKm45_dJE3gnD-w.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 100;
+  src: local('Roboto Thin'), local('Roboto-Thin'), url(http://fonts.gstatic.com/s/roboto/v20/KFOkCnqEu92Fr1MmgVxIIzc.ttf) format('truetype');
+}
+@-webkit-keyframes animation-rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@-moz-keyframes animation-rotate {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-o-keyframes animation-rotate {
+  100% {
+    -o-transform: rotate(360deg);
+  }
+}
+@keyframes animation-rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+button {
+  appearance: none;
+  -webkit-appearance: none;
+  border: none;
+  cursor: pointer;
+}
+button,
+button span {
+  position: relative;
+}
+button span {
+  white-space: nowrap;
+  display: block;
+}
+button::moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+button:focus {
+  outline: none;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  padding: 50px;
+  text-align: center;
+  background-image: linear-gradient(to bottom right, rgba(236, 240, 241, 0.55), rgba(255, 255, 255, 0.85)), url("//ununsplash.imgix.net/5/unsplash-bonus.jpg?q=75&fm=jpg&s=816c3ecfd6f8058450e6ae250fac7141");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+body h1 {
+  padding: 50px;
+  font: 100 72px Roboto, "Helvetica Neue", sans-serif;
+  text-align: center;
+  color: transparent;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB2aWV3Qm94PSIwIDAgMSAxIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIj48bGluZWFyR3JhZGllbnQgaWQ9Imxlc3NoYXQtZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiM5NDdiYzEiIHN0b3Atb3BhY2l0eT0iMSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzMzYWNkNCIgc3RvcC1vcGFjaXR5PSIxIi8+PC9saW5lYXJHcmFkaWVudD48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2xlc3NoYXQtZ2VuZXJhdGVkKSIgLz48L3N2Zz4=);
+  background-image: -webkit-linear-gradient(top, #947bc1 -10%, #33acd4 100%);
+  background-image: -moz-linear-gradient(top, #947bc1 -10%, #33acd4 100%);
+  background-image: -o-linear-gradient(top, #947bc1 -10%, #33acd4 100%);
+  background-image: linear-gradient(to bottom, #947bc1 -10%, #33acd4 100%);
+}
+.button {
+  padding: 0;
+  background-color: #3498db;
+  background-image: 8121991;
+  background-image: -webkit-linear-gradient(#4aa3df 0%, #258cd1 100%);
+  background-image: -moz-linear-gradient(#4aa3df 0%, #258cd1 100%);
+  background-image: -o-linear-gradient(#4aa3df 0%, #258cd1 100%);
+  background-image: linear-gradient(#4aa3df 0%, #258cd1 100%);
+  -webkit-box-shadow: inset rgba(0, 0, 0, 0.2) 0 0 0 1px, rgba(52, 152, 219, 0.5) 0 0 5px;
+  -moz-box-shadow: inset rgba(0, 0, 0, 0.2) 0 0 0 1px, rgba(52, 152, 219, 0.5) 0 0 5px;
+  box-shadow: inset rgba(0, 0, 0, 0.2) 0 0 0 1px, rgba(52, 152, 219, 0.5) 0 0 5px;
+  -webkit-border-radius: 4px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 4px;
+  -moz-background-clip: padding;
+  border-radius: 4px;
+  background-clip: padding-box;
+}
+.button span {
+  text-shadow: rgba(29, 111, 165, 0.9) 0 0 2px;
+}
+.button span {
+  padding: 20px 25px;
+  font: 700 13px Montserrat, Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  color: #fff;
+  -webkit-transition: all 350ms ease;
+  -moz-transition: all 350ms ease;<html lang="en"><head>
+<meta charset="UTF-8">
+<link rel="apple-touch-icon" type="image/png" href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+<meta name="apple-mobile-web-app-title" content="CodePen">
+<link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+<link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
+<title>CodePen - Loading Button With SVG Animation</title>
+<style>
+button.load-button {
+  color: #fff;
+  background-color: #004B97;
+  padding: 10px;
+  border: 0px;
+  font-size: 20px;
+  width: 200px;
+  height: 60px;
+  outline: 0;
+  display: block;
+  margin: 10px 0;
+}
+
+button.load-button span {
+  transition: all 1s;
+  opacity: 1;
+}
+button.load-button svg {
+  display: none;
+  margin: 0 auto;
+  transition: all 1s;
+}
+button.load-button svg path, button.load-button svg rect {
+  fill: #fff;
+}
+
+button.loading-start span {
+  display: none;
+  opacity: 0;
+}
+button.loading-start svg {
+  display: block;
+  opacity: 1;
+}
+
+div.btn-content {
+  float: left;
+  margin: 0 20px;
+}
+</style>
+<script>
+  window.console = window.console || function(t) {};
+</script>
+<script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+</head>
+<body translate="no">
+<div class="btn-content">
+<button class="load-button">
+<span>Send</span>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" height="40px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve">
+<path opacity="0.2" fill="#000" d="M20.201,5.169c-8.254,0-14.946,6.692-14.946,14.946c0,8.255,6.692,14.946,14.946,14.946
+          s14.946-6.691,14.946-14.946C35.146,11.861,28.455,5.169,20.201,5.169z M20.201,31.749c-6.425,0-11.634-5.208-11.634-11.634
+          c0-6.425,5.209-11.634,11.634-11.634c6.425,0,11.633,5.209,11.633,11.634C31.834,26.541,26.626,31.749,20.201,31.749z"></path>
+<path fill="#000" d="M26.013,10.047l1.654-2.866c-2.198-1.272-4.743-2.012-7.466-2.012h0v3.312h0
+          C22.32,8.481,24.301,9.057,26.013,10.047z" transform="rotate(226.938 20 20)">
+<animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 20 20" to="360 20 20" dur="0.5s" repeatCount="indefinite"></animateTransform>
+</path>
+</svg>
+</button>
+<button class="load-button">
+<span>Send</span>
+<svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" height="40px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+<path fill="#000" d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z" transform="rotate(129.115 25 25)">
+<animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animateTransform>
+</path>
+</svg>
+</button>
+<button class="load-button">
+<span>Send</span>
+<svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" height="40px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+<path fill="#000" d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z" transform="rotate(129.115 25 25)">
+<animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animateTransform>
+</path>
+</svg>
+</button>
+<button class="load-button">
+<span>Send</span>
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+<rect x="0" y="0" width="4" height="7" fill="#333" transform="scale(1 2.43461)">
+<animateTransform attributeType="xml" attributeName="transform" type="scale" values="1,1; 1,3; 1,1" begin="0s" dur="0.6s" repeatCount="indefinite"></animateTransform>
+</rect>
+<rect x="10" y="0" width="4" height="7" fill="#333" transform="scale(1 1.10128)">
+<animateTransform attributeType="xml" attributeName="transform" type="scale" values="1,1; 1,3; 1,1" begin="0.2s" dur="0.6s" repeatCount="indefinite"></animateTransform>
+</rect>
+<rect x="20" y="0" width="4" height="7" fill="#333" transform="scale(1 2.23205)">
+<animateTransform attributeType="xml" attributeName="transform" type="scale" values="1,1; 1,3; 1,1" begin="0.4s" dur="0.6s" repeatCount="indefinite"></animateTransform>
+</rect>
+</svg>
+</button>
+</div>
+<div class="btn-content">
+<button class="load-button">
+<span>Send</span>
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="30px" viewBox="0 0 24 30" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+<rect x="0" y="0" width="4" height="10" fill="#333" transform="translate(0 14.3461)">
+<animateTransform attributeType="xml" attributeName="transform" type="translate" values="0 0; 0 20; 0 0" begin="0" dur="0.6s" repeatCount="indefinite"></animateTransform>
+</rect>
+<rect x="10" y="0" width="4" height="10" fill="#333" transform="translate(0 1.0128)">
+<animateTransform attributeType="xml" attributeName="transform" type="translate" values="0 0; 0 20; 0 0" begin="0.2s" dur="0.6s" repeatCount="indefinite"></animateTransform>
+</rect>
+<rect x="20" y="0" width="4" height="10" fill="#333" transform="translate(0 12.3205)">
+<animateTransform attributeType="xml" attributeName="transform" type="translate" values="0 0; 0 20; 0 0" begin="0.4s" dur="0.6s" repeatCount="indefinite"></animateTransform>
+</rect>
+</svg>
+</button>
+<button class="load-button">
+<span>Send</span>
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="30px" viewBox="0 0 24 30" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+<rect x="0" y="7.26155" width="4" height="16.4769" fill="#333">
+<animate attributeName="height" attributeType="XML" values="5;21;5" begin="0s" dur="0.6s" repeatCount="indefinite"></animate>
+<animate attributeName="y" attributeType="XML" values="13; 5; 13" begin="0s" dur="0.6s" repeatCount="indefinite"></animate>
+</rect>
+<rect x="10" y="11.2615" width="4" height="8.47691" fill="#333">
+<animate attributeName="height" attributeType="XML" values="5;21;5" begin="0.15s" dur="0.6s" repeatCount="indefinite"></animate>
+<animate attributeName="y" attributeType="XML" values="13; 5; 13" begin="0.15s" dur="0.6s" repeatCount="indefinite"></animate>
+</rect>
+<rect x="20" y="10.7385" width="4" height="9.52309" fill="#333">
+<animate attributeName="height" attributeType="XML" values="5;21;5" begin="0.3s" dur="0.6s" repeatCount="indefinite"></animate>
+<animate attributeName="y" attributeType="XML" values="13; 5; 13" begin="0.3s" dur="0.6s" repeatCount="indefinite"></animate>
+</rect>
+</svg>
+</button>
+<button class="load-button">
+<span>Send</span>
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="30px" viewBox="0 0 24 30" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+<rect x="0" y="0" width="4" height="20" fill="#333">
+<animate attributeName="opacity" attributeType="XML" values="1; .2; 1" begin="0s" dur="0.6s" repeatCount="indefinite"></animate>
+</rect>
+<rect x="7" y="0" width="4" height="20" fill="#333">
+<animate attributeName="opacity" attributeType="XML" values="1; .2; 1" begin="0.2s" dur="0.6s" repeatCount="indefinite"></animate>
+</rect>
+<rect x="14" y="0" width="4" height="20" fill="#333">
+<animate attributeName="opacity" attributeType="XML" values="1; .2; 1" begin="0.4s" dur="0.6s" repeatCount="indefinite"></animate>
+</rect>
+</svg>
+</button>
+<button class="load-button">
+<span>Send</span>
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="30px" viewBox="0 0 24 30" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+<rect x="0" y="6.41347" width="4" height="17.1731" fill="#333" opacity="0.2">
+<animate attributeName="opacity" attributeType="XML" values="0.2; 1; .2" begin="0s" dur="0.6s" repeatCount="indefinite"></animate>
+<animate attributeName="height" attributeType="XML" values="10; 20; 10" begin="0s" dur="0.6s" repeatCount="indefinite"></animate>
+<animate attributeName="y" attributeType="XML" values="10; 5; 10" begin="0s" dur="0.6s" repeatCount="indefinite"></animate>
+</rect>
+<rect x="8" y="8.91347" width="4" height="12.1731" fill="#333" opacity="0.2">
+<animate attributeName="opacity" attributeType="XML" values="0.2; 1; .2" begin="0.15s" dur="0.6s" repeatCount="indefinite"></animate>
+<animate attributeName="height" attributeType="XML" values="10; 20; 10" begin="0.15s" dur="0.6s" repeatCount="indefinite"></animate>
+<animate attributeName="y" attributeType="XML" values="10; 5; 10" begin="0.15s" dur="0.6s" repeatCount="indefinite"></animate>
+</rect>
+<rect x="16" y="8.58653" width="4" height="12.8269" fill="#333" opacity="0.2">
+<animate attributeName="opacity" attributeType="XML" values="0.2; 1; .2" begin="0.3s" dur="0.6s" repeatCount="indefinite"></animate>
+<animate attributeName="height" attributeType="XML" values="10; 20; 10" begin="0.3s" dur="0.6s" repeatCount="indefinite"></animate>
+<animate attributeName="y" attributeType="XML" values="10; 5; 10" begin="0.3s" dur="0.6s" repeatCount="indefinite"></animate>
+</rect>
+</svg>
+</button>
+</div>
+<script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script id="rendered-js">
+$(function () {
+  $("button.load-button").on("click", function () {
+    var btndom = $(this);
+    btndom.addClass("loading-start");
+    btndom.attr("disabled", true);
+
+    setTimeout(function () {
+      btndom.removeClass("loading-start").removeAttr("disabled");
+    }, 5000);
+  });
+});
+//# sourceURL=pen.js
+    </script>
+
+
+</body></html>
+<style type="text/css">
+  -o-transition: all 350ms ease;
+  transition: all 350ms ease;
+}
+.button:hover {
+  background-color: #4aa3df;
+  background-image: 8121991;
+  background-image: -webkit-linear-gradient(#5faee3 0%, #3498db 100%);
+  background-image: -moz-linear-gradient(#5faee3 0%, #3498db 100%);
+  background-image: -o-linear-gradient(#5faee3 0%, #3498db 100%);
+  background-image: linear-gradient(#5faee3 0%, #3498db 100%);
+  -webkit-box-shadow: inset rgba(0, 0, 0, 0.2) 0 0 0 1px, rgba(74, 163, 223, 0.5) 0 0 5px;
+  -moz-box-shadow: inset rgba(0, 0, 0, 0.2) 0 0 0 1px, rgba(74, 163, 223, 0.5) 0 0 5px;
+  box-shadow: inset rgba(0, 0, 0, 0.2) 0 0 0 1px, rgba(74, 163, 223, 0.5) 0 0 5px;
+}
+.button:hover span {
+  text-shadow: rgba(33, 125, 187, 0.9) 0 0 2px;
+}
+.button:active {
+  background-color: #258cd1;
+  background-image: 8121991;
+  background-image: -webkit-linear-gradient(#258cd1 0%, #258cd1 100%);
+  background-image: -moz-linear-gradient(#258cd1 0%, #258cd1 100%);
+  background-image: -o-linear-gradient(#258cd1 0%, #258cd1 100%);
+  background-image: linear-gradient(#258cd1 0%, #258cd1 100%);
+}
+.button--loading {
+  background-color: #258cd1 !important;
+  background-image: 8121991 !important;
+  background-image: -webkit-linear-gradient(#258cd1 0%, #258cd1 100%) !important;
+  background-image: -moz-linear-gradient(#258cd1 0%, #258cd1 100%) !important;
+  background-image: -o-linear-gradient(#258cd1 0%, #258cd1 100%) !important;
+  background-image: linear-gradient(#258cd1 0%, #258cd1 100%) !important;
+  position: relative;
+  cursor: wait;
+}
+.button--loading:before {
+  margin: -13px 0 0 -13px;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  content: '';
+  -webkit-border-radius: 24px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 24px;
+  -moz-background-clip: padding;
+  border-radius: 24px;
+  background-clip: padding-box;
+  border: rgba(255, 255, 255, 0.25) 2px solid;
+  border-top-color: #fff;
+  -webkit-animation: animation-rotate 750ms linear infinite;
+  -moz-animation: animation-rotate 750ms linear infinite;
+  -o-animation: animation-rotate 750ms linear infinite;
+  animation: animation-rotate 750ms linear infinite;
+}
+.button--loading span,
+.button--loading:hover span,
+.button--loading:active span {
+  color: transparent;
+  text-shadow: none;
+}
+</style>
+<script>
+  window.console = window.console || function(t) {};
+</script>
+<script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+</head>
+<body translate="no">
+<h1>Call To Action</h1>
+<button class="button button--loading" id="call-to-action">
+<span>Click this for magic</span>
+</button>
+<script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script id="rendered-js">
+(function () {
+  var $;
+
+  $ = jQuery;
+
+  $(document).ready(function () {
+    return $('#call-to-action').on('click', function () {
+      return $(this).toggleClass('button--loading');
+    });
+  });
+
+}).call(this);
+
+
+//# sourceURL=coffeescript
+//# sourceURL=pen.js
+    </script>
+
+
+</body></html>

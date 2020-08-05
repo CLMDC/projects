@@ -20,7 +20,7 @@
 <br>
 <br>
 
-<input style="color: #fff; font-family: avenir-regular; font-weight: 500;  font-size: 20px;" type="submit" data-loading-text="LOADING..." name="submit2" class="btn btn-success btn-send" value="Next" onclick="passVarToAffiliates()">
+<input style="color: #fff; font-family: avenir-regular; font-weight: 500;  font-size: 20px;" type="submit" data-loading-text="LOADING..." name="submit2" class="loadingBtn btn btn-success btn-send" value="Next" onclick="passVarToAffiliates()">
 
 </div>
 
@@ -28,7 +28,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
 <script id="rendered-js">
-$('.btn').on('click', function () {
+$('.loadingBtn').on('click', function () {
   var $this = $(this);
   $this.button('loading');
   setTimeout(function () {

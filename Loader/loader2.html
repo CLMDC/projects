@@ -1,0 +1,110 @@
+<html lang="en"><head>
+<meta charset="UTF-8">
+
+<style>
+@import url("https://fonts.googleapis.com/css?family=Raleway");
+html,
+body {
+  min-height: 100%;
+}
+.ctn {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  height: 100%;
+  min-height: 100%;
+}
+#check {
+  display: none;
+}
+.btn-label {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  background-color: #ff6347;
+  border: none;
+  font-family: 'Raleway', serif;
+  font-size: 30px;
+  color: #fffeee;
+  margin-top: 20%;
+  height: 50px;
+  width: 200px;
+}
+.btn-text {
+  font-family: 'Raleway', serif;
+  font-size: 30px;
+  color: #fffeee;
+}
+.load {
+  display: none;
+  width: 20px;
+  height: 20px;
+  border: 5px solid #fff;
+  border-radius: 100%;
+}
+.open {
+  border-top: 5px solid transparent;
+  -webkit-animation: load-animate infinite linear 1s;
+          animation: load-animate infinite linear 1s;
+}
+#check:checked ~ .btn-label > .btn-text {
+  display: none;
+}
+#check:checked ~ .btn-label > .load {
+  display: inline-block;
+}
+@-webkit-keyframes load-animate {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+    opacity: 0.35;
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@keyframes load-animate {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+    opacity: 0.35;
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+</style>
+<script>
+  window.console = window.console || function(t) {};
+</script>
+<script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+</head>
+<body translate="no">
+<div class="ctn">
+<input type="checkbox" id="check">
+<label for="check" class="btn-label">
+<span class="load open"></span>
+<p class="btn-text">Click</p>
+</label>
+</div>
+
+
+</body></html>

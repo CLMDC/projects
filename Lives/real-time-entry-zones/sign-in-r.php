@@ -254,20 +254,6 @@
             }
         </style>
 
-<!--         <script>       
-        function formatOptions (state) {
-            if (!state.id) {
-             return state.text; 
-         }
-
-             var baseUrl = "images/";
-             var $state = $(
-                '<span><img src="' + baseUrl + '/' + state.element.value.toLowerCase() + '.svg" class="img-flag" /> ' + state.text + '</span>'
-              );
-              return $state;
-        }
-        </script> -->
-
 
 
         <script type="text/javascript">  
@@ -460,11 +446,18 @@
                             <!-- Hidden -->
                             <input data-val="true" data-val-number="The field AccountType must be a number." data-val-required="The AccountType field is required." id="accountype" name="AccountType" type="hidden" value="2">
 
+                            <?php
 
+                            //receive data.
+                            session_start();
+                            $UserNameV=$_SESSION['UserName'];
+                            $PasswordV=$_SESSION['Password'];
+                            //echo $r;
+                            ?>
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <!-- <label for="email">Email *</label> -->
-                                    <input id="username" type="text" value="" name="UserName" autocomplete="off" class="form-control" placeholder="Email address" required="required" data-error="Valid email is required." >                                 
+                                    <input id="username" type="text" value="<?php echo $UserNameV; ?>" name="UserName" autocomplete="off" class="form-control" placeholder="Email address" required="required" data-error="Valid email is required." >                                 
 
                                     <span class="error"><?php if (isset($emailError)) echo $emailError ?></span> 
                                     <div class="help-block with-errors"></div>
@@ -484,18 +477,6 @@
                                 </label>
                               </div>
                               </div>
-
-                              <script type="text/javascript">
-                                //retrieve data from live account form and auto populate
-                                document.getElementById("username").value=localStorage.getItem("TPVEmail");
-                                var getEmail = document.getElementById("username").value=localStorage.getItem("TPVEmail");
-                                console.log(getEmail);
-    
-
-                                document.getElementById("password").value=localStorage.getItem("TPFName");
-                                var getName = document.getElementById("password").value=localStorage.getItem("TPFName");
-                                console.log(getName);                              
-                            </script>  
 
 
                             

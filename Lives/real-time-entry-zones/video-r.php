@@ -1,10 +1,14 @@
 <?php
+
+
+
 if(isset($_POST['submitToRedirect'])) {
 
+
         // Live URL
-        //$yourURL="/sign-in-live-account/";        
+        $yourURL="/sign-in-live-account-r2/";        
         // Local URL
-        $yourURL="sign-in-r.php";  
+        //$yourURL="sign-in-r.php";  
         echo ("<script>location.href='$yourURL'</script>");
 
 }
@@ -51,11 +55,35 @@ if(isset($_POST['submitToRedirect'])) {
 <form method="POST">
 
                             <input data-val="true" data-val-number="The field AccountType must be a number." data-val-required="The AccountType field is required." id="accountype" name="AccountType" type="hidden" value="2">
+                            <?php
 
+                            //send data
+                            session_start();
+                            if(array_key_exists('submitToRedirect',$_POST))
+
+
+                            if (isset($_POST['UserName'])) {
+                                $UserNameV=$_SESSION['UserName'];
+                            }else{
+                                $UserName = "";
+                            }
+
+                            if (isset($_POST['Password'])) {
+                                $PasswordV=$_SESSION['Password'];
+                            }else{
+                                $Password = "";  
+                            }
+                                
+                            //receive data  
+                            $UserNameV=$_SESSION['UserName'];
+                            $PasswordV=$_SESSION['Password'];
+
+                            //echo $r;
+                            ?>
 
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <input id="email" type="text" value="<?php echo $UserName; ?>" name="UserName" autocomplete="off" class="form-control" placeholder="Email address" required="required" data-error="Valid email is required." >                                 
+                                    <input id="email" type="text" value="<?php echo $UserNameV; ?>" name="UserName" autocomplete="off" class="form-control" placeholder="Email address" required="required" data-error="Valid email is required." >                              
 
                                     <span class="error"><?php if (isset($emailError)) echo $emailError ?></span> 
                                     <div class="help-block with-errors"></div>
@@ -66,56 +94,18 @@ if(isset($_POST['submitToRedirect'])) {
 
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <input id="pwd" type="text" value="<?php echo $Password; ?>" name="Password" autocomplete="off" class="form-control">                                 
+                                    <input id="pwd" type="password" value="<?php echo $PasswordV; ?>" name="Password" autocomplete="off" class="form-control">                                 
                                 </div>
                             </div>
 
 
 
-                            <!-- Receive data from live application -->  
-                            <script type="text/javascript">
-                                //retrieve data from live account form and auto populate
-                                document.getElementById("email").value=localStorage.getItem("TPVEmail");
-                                var getEmail = document.getElementById("email").value=localStorage.getItem("TPVEmail");
-                                console.log(getEmail);
-
-
-                                document.getElementById("pwd").value=localStorage.getItem("TPFName");
-                                var getName = document.getElementById("pwd").value=localStorage.getItem("TPFName");
-                                console.log(getName);                              
-            
-                            </script>  
-
-
-
-
-
-                            <!-- Get data and send it to sign in, auto populate. -->
-                              <script type="text/javascript">
-                                function PassDataToAutoLogin()
-                                {
-                                  var EEmailToAutoLogin=document.getElementById("email").value;
-                                  //email is the imput into the form"
-                                  localStorage.setItem("TPVEmail",EEmailToAutoLogin); 
-
-
-                                  var FNameToAutoLogin=document.getElementById("pwd").value;
-                                  //email is the imput into the form"
-                                  localStorage.setItem("TPFName",FNameToAutoLogin);    
-
-
-                                  return false;
-                                }
-                              </script>
-
-
                             <div class="col-md-12">
                                 <!-- Only add the vars to auto populate -->
                                 <center>
-                                    <input style="color: #fff; font-family: avenir-regular; font-weight: 500;  font-size: 20px;" type="submit" name="submitToRedirect" class="btn btn-success btn-send" value="Access your client portal" onclick="PassDataToAutoLogin();">  
+                                    <input style="color: #fff; font-family: avenir-regular; font-weight: 500;  font-size: 20px;" type="submit" name="submitToRedirect" class="btn btn-success btn-send" value="Access your client portal">  
                                 </center>
                             </div>
 </form>
-
 </body>
 </html>

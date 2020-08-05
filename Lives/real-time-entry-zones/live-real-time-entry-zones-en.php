@@ -1,13 +1,11 @@
 <?PHP
 // PDF Library
-//localhost
-require('fpd/fpdf.php');
-//include_once('wp-content/uploads/legal-documents/pdf-form/fpd/fpdf.php');
+//require('fpd/fpdf.php');
+include_once('wp-content/uploads/legal-documents/pdf-form/fpd/fpdf.php');
 
 // PHPMailer
-//localhost
-require 'PHPMailer-master/vendor/autoload.php';
-//include_once 'wp-content/uploads/legal-documents/pdf-form/PHPMailer-master/vendor/autoload.php';
+//require 'PHPMailer-master/vendor/autoload.php';
+include_once 'wp-content/uploads/legal-documents/pdf-form/PHPMailer-master/vendor/autoload.php';
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
@@ -53,10 +51,24 @@ $varTime = gmdate("h:i:s A", time() + 3600*($timezone));
 if(isset($_POST['submit2'])) {
 
 
+session_start();
+if(array_key_exists('submit2',$_POST))
+
+if (isset($_POST['UserName'])) {
+    $_SESSION['UserName']=$_POST['UserName'];
+}else{
+    $UserName = "";
+}
+
+if (isset($_POST['Password'])) {
+    $_SESSION['Password']=$_POST['Password'];
+}else{
+    $Password = "";    
+}
 
 
 
-/* ------------------- Start Current Business, data creation ------------------- */
+/* ------------------- Starts Current Business, data creation ------------------- */
 $url = 'https://api.pro.we.01.currentdesk.com:444/registration/client/individual';
 
     $What_product_do_you_tradeCB = $_POST['Trading_Product__c'];
@@ -162,8 +174,8 @@ curl_close($ch);
 // ORI
 if ($statusCode == 200) {
 
-
-/* ------------------- Start data of SalesForce ------------------- */  
+////////////////////////////////Test code
+/* ------------------- Start data of SF ------------------- */  
 
 $oid = "00Di0000000cOee";
 
@@ -266,6 +278,10 @@ $post_string = implode ('&', $post_items);
 // ORI
 $curl_connection = curl_init('https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8');
 
+//$curl_connection = curl_init('https://-sdfwebto.sdsfdsalesforce.com/dsfservlet/servlet.WebToLead?encoding=UTF-8');
+//$curl_connection = curl_init('https://webto--.salesforce.com/servlet/servxzczlet.WebToLezxcad?encodingzxcxzc=UTF-8');
+
+//curl_setopt($curl_connection, CURLOPT_URL, $url);
 
 
 
@@ -295,8 +311,9 @@ curl_close($curl_connection);
 
 
 
-
 /* ------------------- Starts send email in PDF ------------------- */
+
+
 
 // Form parameters
 $Email_reply = 'coreliquiditymarkets.clm@gmail.com';
@@ -948,13 +965,17 @@ catch (\Exception $e)
 
 /* ------------------- Ends send email in PDF ------------------- */
 
-        //Live URL  
-        //$yourURL="/verify-your-account-r/";
-        //Local URL  
-        $yourURL="video-r.php";
+  
+////////////////////////////////Test code
 
+
+        
+        $yourURL="/verify-your-account-r2/";
+        //$yourURL="video-r.php";
+        //
         echo ("<script>location.href='$yourURL'</script>");
-     
+        //header('Location: https://www.clmforex.com/demo-account-thank-you');
+        //exit(); // terminates the script
     }
     else {
       // error occurred - provide the user some information.
@@ -1688,7 +1709,24 @@ label {
 
       /* Responsive rules */
     @media only screen and (max-width: 375px) {
-       .col-md-6 {
+      /*div .formStyle {
+      border-radius: 10px !important;
+      background-color: #fff;
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-bottom: 9px;
+      padding-top: 35px;
+      position: relative;
+      height: 1130px;
+      width: 100%;
+      height: 100% !important;    
+      margin: auto;
+      top:25%;
+      padding-bottom: 24% !important;
+      }*/
+
+
+      .col-md-6 {
       max-width: 100% !important;
       padding-right: 15px !important;
       padding-left: 15px !important;
@@ -1710,7 +1748,21 @@ label {
 
     /*-- Horizontal Cellphones --*/
     @media (min-width: 376px) and (max-width: 767px) {
- 
+      /*div .formStyle{
+        border-radius: 10px !important;
+      background-color: #fff;
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-bottom: 9px;
+      padding-top: 35px;
+      position: relative;
+      width: 100%;
+      height: 100% !important;      
+      padding-bottom: 25% !important;
+      margin: auto;
+      top:25%;        
+      }*/
+
       .col-md-6 {
       max-width: 100% !important;
       padding-right: 15px !important;
@@ -1774,6 +1826,44 @@ label {
 }
 
 
+ /* Style for Safari. */
+/* select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: .5em;
+    background: #efefef;
+    border: none;
+    border-radius: 3px;
+    padding: 1em 2em 1em 1em;
+    font-size: 1em;
+}
+.select-container {position:relative; display: inline;}
+.select-container:after {content:""; width:0; height:0; position:absolute; pointer-events: none;}
+.select-container:after {
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    top: .3em;
+    right: .75em;
+    border-top: 8px solid black;
+    opacity: 0.5;
+}
+select::-ms-expand {
+    display: none;
+}*/
+
+
+/*select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url("data:image/gif;base64,R0lGODlhBgAGAKEDAFVVVX9/f9TU1CgmNyH5BAEKAAMALAAAAAAGAAYAAAIODA4hCDKWxlhNvmCnGwUAOw==") no-repeat;
+  background-size: 12px;
+  background-position: calc(100% - 20px) center;
+  background-repeat: no-repeat;
+  background-color: #efefef;
+}*/
+
 
 /* This was working almos done, but by time is in stand by*/
 select {
@@ -1801,26 +1891,49 @@ select {
 
 
 
+/*
+select {
+  color: #8C98F2;
+  font-size: 18px;
+  width: 50%;
+  margin-left: 25%;
+  margin-top: 50px;
+  padding: 20px 0 20px 10px;
+  border: 0 !important;
+ 
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+ 
+
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='%238C98F2'><polygon points='0,0 100,0 50,50'/></svg>") no-repeat;
+  background-size: 12px;
+  background-position: calc(100% - 20px) center;
+  background-repeat: no-repeat;
+  background-color: #efefef;
+}
+*/
 
 
 </style>
- <!-- Get data and send it to sign in, auto populate. -->
-      <script type="text/javascript">
-        function passVarToAffiliates()
-        {
-          var EEmail=document.getElementById("UserName").value;
-          //email is the imput into the form"
-          localStorage.setItem("TPVEmail",EEmail); 
+
+<!-- Get data and send it to sign in, auto populate. -->
+    <script type="text/javascript">
+      function passVarToAffiliates()
+      {
+        var EEmail=document.getElementById("UserName").value;
+        //email is the imput into the form"
+        localStorage.setItem("TPVEmail",EEmail); 
 
 
-          var FName=document.getElementById("password").value;
-          //email is the imput into the form"
-          localStorage.setItem("TPFName",FName);    
+        var FName=document.getElementById("password").value;
+        //email is the imput into the form"
+        localStorage.setItem("TPFName",FName);    
 
 
-          return false;
-        }
-      </script>
+        return false;
+      }
+    </script>
 
 
 </head>
@@ -1914,9 +2027,8 @@ select {
                                    <span><i class="glyphicon glyphicon-eye-open"></i></span>
                                 </label>
                               </div>
-                              </div>
+                              </div>                            
 
-                             
 
                             <div class="col-md-12">
                                 <div class="form-group">
@@ -2456,8 +2568,6 @@ input.wt[type=tel] {
                                     -->
                                 </div>
                             </div>
-
-
                             <div class="col-md-6">  
                             <label for="first_name" class="font-safari" style="color: #b1b1b1 !important; font-weight: 600 !important; width: 100% !important; font-size: 13px !important;">What product(s) do you trade?*</label>
                             <select class="js-example-basic-multiple" id="Trading_Product__c" name="Trading_Product__c[]" multiple="multiple" required>
@@ -2711,11 +2821,16 @@ button:focus {outline:0;}
 </style>
 
                             <div class="col-md-12">
+                                <!-- <input style="color: #fff; font-family: avenir-regular; font-weight: 500; font-size: 20px;" type="submit" name="submit" class="btn btn-primary btn-send" value="">  -->
+                                
+                                <!-- Working good...
+                                <input style="color: #fff; font-family: avenir-regular; font-weight: 500;  font-size: 20px;" type="submit" name="submit2" class="btn btn-success btn-send" value="Next"> 
+                                -->
                                 <!-- Only add the vars to auto populate -->
-                                <input style="color: #fff; font-family: avenir-regular; font-weight: 500;  font-size: 20px;" type="submit" id="submit2" name="submit2" class="btn btn-success btn-send" value="Next" onclick="passVarToAffiliates();">  
-
+                                <input style="color: #fff; font-family: avenir-regular; font-weight: 500;  font-size: 20px;" type="submit" name="submit2" class="btn btn-success btn-send" value="Next">                                
 
                             </div>
+
 
         </div>
        </div>                    

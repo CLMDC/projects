@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>
+    
+  </title>
+
+</head>
+<body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+  $("#myform").on("submit", function(){
+    $("#pageloader").fadeIn();
+  });//submit
+});//document ready
+</script>
+
+<style type="text/css">
+  #pageloader
+{
+  background: #FAF9F9;
+  display: none;
+  height: 100%;
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
+}
+
+#pageloader img
+{
+  left: 50%;
+  margin-left: -32px;
+  margin-top: -32px;
+  top: 50%;
+  position: fixed;
+}
+</style>
+
+
+<div id="pageloader">
+   <img src="http://cdnjs.cloudflare.com/ajax/libs/semantic-ui/0.16.1/images/loader-large.gif" alt="processing..." />
+</div>
+
+<form id="myform">
+  <input type="text" name="fname" id="fname" value="" />
+  <input type="submit" value="Submits" />
+</form>
+
+</body>
+</html>
